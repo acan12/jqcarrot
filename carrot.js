@@ -1,3 +1,11 @@
+/**
+ * jQuery jqCarrot Plugin v1.0.0
+ *
+ * https://github.com/acan12/jqcarrot
+ *
+ * Copyright (c) 2014 Ary Suryawan
+ *
+ */
 (function($class, $color) {
   
   var carrot = {
