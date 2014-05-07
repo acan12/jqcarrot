@@ -5,7 +5,10 @@ Minimal, light-weight jQuery ratings.
 
 How to use
 ----------
-...
+
+Sample HTML document:
+
+```
 <div class="rating-container">
   <a href="#" class="bar level-1" data-original-title="1.0">&nbsp;</a>
   <a href="#" class="bar level-2" data-original-title="1.5">&nbsp;</a>
@@ -17,7 +20,7 @@ How to use
   <a href="#" class="bar level-8" data-original-title="4.5">&nbsp;</a>
   <a href="#" class="bar level-9" data-original-title="5.0">&nbsp;</a>
 </div>
-...
+```
 
 $(".bar").cRateHover();
 
