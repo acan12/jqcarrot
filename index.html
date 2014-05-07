@@ -1,0 +1,53 @@
+<html>
+  <head>
+    
+    <link rel="stylesheet" type="text/css" href="lib/mystyle.css">
+    <script src="lib/jquery-1.10.2.min.js"></script>
+    <script src="carrot.js"></script>
+    
+  </head>
+  <body>
+    Testing Carrot JQ plugin
+    <div class="grid_4 your-rating rating-widget ratings-wrapper  rating-widget-res_7401222" data-res_id="7401222" data-rating-for="restaurant" data-review_id="">
+      <div class="rating-top">
+          <div class="grey-text ttupper bold left">Penilaian Anda</div>
+          <div class="rating-widget-num right hidden" data-original-rating-num="-">
+              -
+          </div>
+          
+      </div>
+      <div>
+        <div class="rating-widget-stars left" id="review-form">
+          <div class="rating-cls user_starssel_0">
+            <a href="#" class="bar level-1" data-original-title="1.0">&nbsp;</a>
+            <a href="#" class="bar level-2" data-original-title="1.5">&nbsp;</a>
+            <a href="#" class="bar level-3" data-original-title="2.0">&nbsp;</a>
+            <a href="#" class="bar level-4" data-original-title="2.5">&nbsp;</a>
+            <a href="#" class="bar level-5" data-original-title="3.0">&nbsp;</a>
+            <a href="#" class="bar level-6" data-original-title="3.5">&nbsp;</a>
+            <a href="#" class="bar level-7" data-original-title="4.0">&nbsp;</a>
+            <a href="#" class="bar level-8" data-original-title="4.5">&nbsp;</a>
+            <a href="#" class="bar level-9" data-original-title="5.0">&nbsp;</a>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <span class="ratingtext" data-original="Penilaian: 3.7/5 (18 suara)">Penilaian: 3.7/5 (18 suara)</span>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <input id="cGo" type='button' name='go' value="Go"/>
+  </body>
+  
+  <script>
+    $(function(){
+        $(".bar").cRateHover({
+          class_name : 'bar',
+          data_rating_values : $('.bar').map(function(){ return $(this).attr('data-original-title') }),
+          click_callback : function(el){
+              val = $(el).attr('data-original-title');
+              $('.ratingtext').text(val+' Rate')
+          }
+        });
+    })
+  </script>
+</html>
