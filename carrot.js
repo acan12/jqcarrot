@@ -11,9 +11,24 @@
   var carrot = {
       init: function(options){
         $class = '.'+options.class_name;
+        
+        
         this.mouseEnter(options);
         this.mouseLeave(options);
         this.mouseClick(options);
+      },
+      
+      drawRating: function(options){
+        var $active = $('.active');
+        $active.nextAll().removeClass('crh-rating-sel');
+        
+
+        color = options.data_rating_colors[parseInt($active.index())]
+        count = $active.prevAll().andSelf().length
+        $color =  color;
+
+        carrot.set_rating_colors($active, carrot.makeArrayOf(color, count))
+        options.click_callback($active);
       },
       
       mouseEnter: function(options){
@@ -86,9 +101,11 @@
       var options = $.extend(defaults, options);
       
       
-      return this.each(function(){
+      this.each(function(){
           options.element = this;
           carrot.init(options);
       })
+      
+      return carrot.drawRating(options);
   };
 })(jQuery);
