@@ -3,7 +3,7 @@
  *
  * https://github.com/acan12/jqcarrot
  *
- * Copyright (c) 2014 Ary Suryawan
+ * Copyright (c) 2014 Ary Suryawan, arycancer@gmail.com
  *
  */
 (function($class, $color) {
