@@ -3,7 +3,7 @@
  *
  * https://github.com/acan12/jqcarrot
  *
- * Copyright (c) 2014 Ary Suryawan, arycancer@gmail.com
+ * Copyright (c) 2014 Ary Suryawan
  *
  */
 (function($class, $color) {
@@ -19,7 +19,7 @@
       },
       
       drawRating: function(options){
-        var $active = $('.active');
+        var $active = $('.rating-active');
         $active.nextAll().removeClass('crh-rating-sel');
         
 
@@ -36,7 +36,7 @@
         $(options.element).bind('mouseenter', function(){
             $($class).css({'background-color': ''})
             carrot.show_rating_colors(this, options.data_rating_colors);
-            options.hover_callback();
+            options.hover_callback(this);
         })
       },
       
@@ -50,6 +50,7 @@
         $(options.element).bind('click', function(){
             // reset class to default
             $(this).nextAll().removeClass('crh-rating-sel');
+            $(this).addClass('clicked');
           
             color = $(this).css('background-color');
             count = $(this).prevAll().andSelf().length
@@ -58,6 +59,7 @@
             
 
             options.click_callback(this);
+            $(this).removeClass('clicked')
         });
       },
       makeArrayOf: function(value, length){
@@ -92,6 +94,7 @@
       var defaults = {
         element : undefined,
         class_name : 'bar',
+        click_class_name : 'clicked',
     		data_rating_values : [1,2,3,4,5,6,7,8,9],
     		data_rating_colors : ['#CB202D', '#DE1D0F', '#FF7800', '#ffba00', '#edd614', '#9acd32', '#5ba829', '#3f7e00', '#305d02'],
     		hover_callback  : function(){},
