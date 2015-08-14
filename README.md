@@ -3,10 +3,14 @@ jQuery JqCarrot Rating Plugin
 
 Minimal, light-weight jQuery ratings.
 
-How to use
-----------
+-----------
 
 ![Alt text](https://cloud.githubusercontent.com/assets/39822/9267092/91e7358c-4273-11e5-8f7a-4d9faf564375.png "jqcarrots")
+
+------
+
+How to use
+----------
 
 Sample HTML document:
 
